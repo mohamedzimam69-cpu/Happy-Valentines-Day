@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Manage Photos</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>💕 Photo Management Panel</h1>
+            <p>Add or remove photos from your Valentine's website</p>
+            <a href="index.html" class="back-btn">← Back to Website</a>
+        </div>
+
+        <div class="admin-content">
+            <!-- Hero Photo Section -->
+            <div class="photo-section">
+                <h2>🌟 Hero Photo (Landing Page)</h2>
+                <div class="photo-card">
+                    <div class="photo-preview" id="hero-preview">
+                        <img src="hero-photo.jpg" alt="Hero Photo" id="hero-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="no-photo">No photo uploaded</div>
+                    </div>
+                    <div class="photo-actions">
+                        <label for="hero-upload" class="upload-btn">
+                            📷 Upload New Photo
+                            <input type="file" id="hero-upload" accept="image/*" onchange="previewImage(this, 'hero-img', 'hero-photo.jpg')">
+                        </label>
+                        <button class="delete-btn" onclick="deletePhoto('hero-photo.jpg', 'hero-img')">🗑️ Delete</button>
+                    </div>
+                    <p class="photo-name">hero-photo.jpg</p>
+                </div>
+            </div>
+
+            <!-- Memory Gallery Section -->
+            <div class="photo-section">
+                <h2>📸 Memory Gallery (6 Photos)</h2>
+                <div class="gallery-grid">
+                    <!-- Memory 1 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory1.jpg" alt="Memory 1" id="memory1-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory1-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory1-upload" accept="image/*" onchange="previewImage(this, 'memory1-img', 'memory1.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory1.jpg', 'memory1-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory1.jpg</p>
+                    </div>
+
+                    <!-- Memory 2 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory2.jpg" alt="Memory 2" id="memory2-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory2-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory2-upload" accept="image/*" onchange="previewImage(this, 'memory2-img', 'memory2.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory2.jpg', 'memory2-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory2.jpg</p>
+                    </div>
+
+                    <!-- Memory 3 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory3.jpg" alt="Memory 3" id="memory3-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory3-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory3-upload" accept="image/*" onchange="previewImage(this, 'memory3-img', 'memory3.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory3.jpg', 'memory3-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory3.jpg</p>
+                    </div>
+
+                    <!-- Memory 4 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory4.jpg" alt="Memory 4" id="memory4-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory4-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory4-upload" accept="image/*" onchange="previewImage(this, 'memory4-img', 'memory4.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory4.jpg', 'memory4-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory4.jpg</p>
+                    </div>
+
+                    <!-- Memory 5 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory5.jpg" alt="Memory 5" id="memory5-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory5-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory5-upload" accept="image/*" onchange="previewImage(this, 'memory5-img', 'memory5.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory5.jpg', 'memory5-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory5.jpg</p>
+                    </div>
+
+                    <!-- Memory 6 -->
+                    <div class="photo-card">
+                        <div class="photo-preview">
+                            <img src="memory6.jpg" alt="Memory 6" id="memory6-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="no-photo">No photo uploaded</div>
+                        </div>
+                        <div class="photo-actions">
+                            <label for="memory6-upload" class="upload-btn">
+                                📷 Upload
+                                <input type="file" id="memory6-upload" accept="image/*" onchange="previewImage(this, 'memory6-img', 'memory6.jpg')">
+                            </label>
+                            <button class="delete-btn" onclick="deletePhoto('memory6.jpg', 'memory6-img')">🗑️</button>
+                        </div>
+                        <p class="photo-name">memory6.jpg</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3>📝 Instructions:</h3>
+                <ul>
+                    <li>Click "Upload" to select and preview a new photo</li>
+                    <li>Right-click on the preview and "Save image as..." with the exact filename shown</li>
+                    <li>Save it in the same folder as your website files</li>
+                    <li>Refresh the main website to see your changes</li>
+                    <li>Use "Delete" to remove a photo from preview</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
